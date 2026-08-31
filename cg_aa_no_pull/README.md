@@ -29,9 +29,10 @@ inputs start with `aa`. Coarse-grained inputs start with `cg`.
 `noW` only changes what is **written** to the trajectory. Water is still in
 the simulation.
 
-`outputs/` holds archived `mdrun` benches, reproducibility sweeps, and the
-20 fs crash PDBs (`step7847*.pdb`). Those logs still use the old names
-(`bench_cg_md_may19`, `bench_md_may19`, …).
+`outputs/` holds the archived `mdrun` benchmark and reproducibility logs.
+Large trajectories, energy files, terminal captures, and the 20 fs crash PDBs
+were removed after their relevant results were recorded. The retained logs
+still use the old names (`bench_cg_md_may19`, `bench_md_may19`, …).
 
 ```
 cg_may19.tpr / cg_noW_may19.tpr / cg_20fs.tpr   # CG inputs
