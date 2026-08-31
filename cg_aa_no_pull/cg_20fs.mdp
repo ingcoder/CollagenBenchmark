@@ -1,0 +1,52 @@
+; STANDARD MD INPUT OPTIONS FOR MARTINI 3 — dt = 20 fs variant of cg_md.mdp
+; Total simulated time kept at 110 ns to stay comparable to AA md_may19.tpr.
+; Output every 5.5 ps and neighbor list every 0.4 ps (standard Martini 3 settings).
+;
+;define                  = -DPOSRES
+;
+integrator               = md
+dt                       = 0.020         ; 20 fs (standard Martini 3)
+nsteps                   = 5500000       ; 110 ns total
+nstcomm                  = 25            ; ~0.5 ps
+;
+nstxout                  = 0
+nstvout                  = 0
+nstfout                  = 0
+nstlog                   = 275           ; 5.5 ps
+nstenergy                = 275
+nstxout-compressed       = 275
+compressed-x-precision   = 1000
+compressed-x-grps        = System
+;
+cutoff-scheme            = Verlet
+nstlist                  = 20            ; 0.4 ps update interval
+pbc                      = xyz
+verlet-buffer-tolerance  = -1
+rlist                    = 1.35
+;
+coulombtype              = reaction-field
+rcoulomb                 = 1.1
+epsilon_r                = 15
+epsilon_rf               = 0
+vdw_type                 = cutoff
+vdw-modifier             = Potential-shift-verlet
+rvdw                     = 1.1
+;
+tcoupl                   = v-rescale
+tc-grps                  = Protein  non-Protein
+tau_t                    = 2.0  2.0
+ref_t                    = 303  303
+;
+Pcoupl                   = parrinello-rahman
+Pcoupltype               = isotropic
+tau_p                    = 12.0
+compressibility          = 3.0e-4  3.0e-4
+ref_p                    = 1.0  1.0
+refcoord_scaling         = com
+;
+gen_vel                  = no
+gen_temp                 = 300
+gen_seed                 = -1
+;
+constraints              = none
+constraint_algorithm     = Lincs

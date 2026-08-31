@@ -1,0 +1,4030 @@
+                :-) GROMACS - gmx mdrun, 2026.0-conda_forge (-:
+
+Copyright 1991-2026 The GROMACS Authors.
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+                         Current GROMACS contributors:
+       Mark Abraham           Andrey Alekseenko           Brian Andrews       
+        Paul Bauer              Cathrine Bergh              Hugh Bird         
+      Eliane Briand               Ania Brown                Yiqi Chen         
+      Mahesh Doijade            Giacomo Fiorin          Stefan Fleischmann    
+      Sergey Gorelov         Gilles Gouaillardet            Alan Gray         
+   Farzaneh Jalalypour         Petter Johansson          Carsten Kutzner      
+    Grzegorz Łazarski         Justin A. Lemkul          Magnus Lundborg      
+        Julio Maia               Pascal Merz             Vedran Miletić      
+      Dmitry Morozov           Lukas Müllender           Szilárd Páll      
+ Andrea Pasquadibisceglie     Michele Pellegrino         Nicola Piasentin     
+     Daniele Rapetti         Muhammad Umair Sadiq         Hubert Santuz       
+      Michael Shirts           Tatiana Shugaeva          Alexey Shvetsov      
+     Bálint Soproni            Philip Turner            Alessandra Villa     
+        Yang Zhang        
+
+                         Previous GROMACS contributors:
+        Emile Apol             Rossen Apostolov           James Barnett       
+      Vladimir Basov        Herman J.C. Berendsen          Par Bjelkmar       
+      Christian Blau          Viacheslav Bolnykh            Kevin Boyd        
+    Aldert van Buuren          Carlo Camilloni           Rudi van Drunen      
+      Anton Feenstra           Oliver Fleetwood            Vytas Gapsys       
+       Gaurav Garg             Gerrit Groenhof            Bert de Groot       
+      Anca Hamuraru           Vincent Hindriksen          Victor Holanda      
+     M. Eric Irrgang           Aleksei Iupinov              Joe Jordan        
+    Christoph Junghans        Prashanth Kanduri        Dimitrios Karkoulis    
+       Peter Kasson             Sebastian Kehl           Sebastian Keller     
+        Jiri Kraus               Per Larsson              Viveca Lindahl      
+      Erik Marklund           Pieter Meulenhoff           Teemu Murtola       
+       Julien Nabet              Sander Pronk             Roland Schulz       
+      Alfons Sijbers         David van der Spoel          Peter Tieleman      
+      Carsten Uphoff             Jon Vincent             Teemu Virolainen     
+    Christian Wennberg     Sebastian Wingbermühle         Maarten Wolf       
+      Artem Zhmurov       
+
+                  Coordinated by the GROMACS project leaders:
+                           Berk Hess and Erik Lindahl
+
+GROMACS:      gmx mdrun, version 2026.0-conda_forge
+Executable:   /root/miniconda3/envs/gromacs-cuda/bin.AVX2_256/gmx
+Data prefix:  /root/miniconda3/envs/gromacs-cuda
+Working dir:  /root/collagen
+Process ID:   16497
+Command line:
+  gmx mdrun -v -s 1000pN.tpr -deffnm 1000pN -pf pullfx.xvg -px pullx1.xvg -maxh 24 -ntmpi 1 -ntomp 20 -gpu_id 0 -nb gpu -rdd 3.9
+
+GROMACS version:     2026.0-conda_forge
+Precision:           mixed
+Memory model:        64 bit
+MPI library:         thread_mpi
+MPI version:         built in
+OpenMP support:      enabled (GMX_OPENMP_MAX_THREADS = 128)
+GPU support:         CUDA
+NBNxM GPU setup:     super-cluster 2x2x2 / cluster 8 (cluster-pair splitting on)
+SIMD instructions:   AVX2_256
+CPU FFT library:     fftw-3.3.11-sse2-avx
+GPU FFT library:     cuFFT
+Multi-GPU FFT:       none
+RDTSCP:              disabled
+TNG support:         enabled
+Hwloc support:       disabled
+Tracing support:     disabled
+Colvars support:     enabled (version 2025-10-13)
+CP2K support:        disabled
+Torch support:       disabled
+Plumed support:      enabled
+C compiler:          /home/conda/feedstock_root/build_artifacts/gromacs_1770909930561/_build_env/bin/x86_64-conda-linux-gnu-cc GNU 14.3.0
+C compiler flags:    -fexcess-precision=fast -funroll-all-loops -mavx2 -mfma -Wno-missing-field-initializers -O3 -DNDEBUG
+C++ compiler:        /home/conda/feedstock_root/build_artifacts/gromacs_1770909930561/_build_env/bin/x86_64-conda-linux-gnu-c++ GNU 14.3.0
+C++ compiler flags:  -fexcess-precision=fast -funroll-all-loops -mavx2 -mfma -Wno-missing-field-initializers -Wno-stringop-truncation -Wno-cast-function-type-strict SHELL:-fopenmp -O3 -DNDEBUG
+BLAS library:        Internal
+LAPACK library:      Internal
+CUDA compiler:       /root/miniconda3/envs/gromacs-cuda/bin/nvcc (NVIDIA 12.9.86)
+CUDA compiler flags:  -O3 -DNDEBUG -use_fast_math -static-global-template-stub=false -Xptxas=-warn-double-usage -Xptxas=-Werror -diag-suppress=177 -use_fast_math -static-global-template-stub=false -Xptxas=-warn-double-usage -Xptxas=-Werror -diag-suppress=177 -O3 -DNDEBUG
+CUDA targets:        50;52-real;60-real;61-real;70-real;75-real;80-real;86-real;89-real;90-real;120
+CUDA driver:         12.80
+CUDA runtime:        12.90
+NVSHMEM:             disabled
+
+
+Running on 1 node with total 8 cores, 8 processing units, 1 compatible GPU
+Hardware detected on host simatomic-dev-e9620b69-51-159-154-28:
+  CPU info:
+    Vendor: AMD
+    Brand:  AMD EPYC 7413 24-Core Processor                
+    Family: 25   Model: 1   Stepping: 1
+    Features: aes amd apic avx avx2 clfsh cmov cx8 cx16 f16c fma htt lahf misalignsse mmx msr pcid pclmuldq pdpe1gb popcnt pse rdrnd rdtscp sha sse2 sse3 sse4a sse4.1 sse4.2 ssse3 tdt x2apic
+  Hardware topology: Basic
+    Packages, cores, and logical processors:
+    [indices refer to OS logical processors]
+      Package  0: [   0] [   1] [   2] [   3] [   4] [   5] [   6] [   7]
+    CPU limit set by OS: -1   Recommended max number of threads: 8
+  GPU info:
+    Number of GPUs detected: 1
+    #0: NVIDIA NVIDIA L40S, compute cap.: 8.9, ECC: yes, stat: compatible
+
+The current CPU can measure timings more accurately than the code in
+gmx mdrun was configured to use. This might affect your simulation
+speed as accurate timings are needed for load-balancing.
+Please consider rebuilding gmx mdrun with the GMX_USE_RDTSCP=ON CMake option.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+M. J. Abraham, T. Murtola, R. Schulz, S. Páll, J. C. Smith, B. Hess, E.
+Lindahl
+GROMACS: High performance molecular simulations through multi-level
+parallelism from laptops to supercomputers
+SoftwareX (2015)
+https://doi.org/10.1016/j.softx.2015.06.001
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Páll, M. J. Abraham, C. Kutzner, B. Hess, E. Lindahl
+Tackling Exascale Software Challenges in Molecular Dynamics Simulations with
+GROMACS
+In S. Markidis & E. Laure (Eds.), Solving Software Challenges for Exascale (2015)
+https://doi.org/10.1007/978-3-319-15976-8_1
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Pronk, S. Páll, R. Schulz, P. Larsson, P. Bjelkmar, R. Apostolov, M. R.
+Shirts, J. C. Smith, P. M. Kasson, D. van der Spoel, B. Hess, E. Lindahl
+GROMACS 4.5: a high-throughput and highly parallel open source molecular
+simulation toolkit
+Bioinformatics (2013)
+https://doi.org/10.1093/bioinformatics/btt055
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess, C. Kutzner, D. van der Spoel, E. Lindahl
+GROMACS 4: Algorithms for highly efficient, load-balanced, and scalable
+molecular simulation
+J. Chem. Theory Comput. (2008)
+https://doi.org/10.1021/ct700301q
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+D. van der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark, H. J. C.
+Berendsen
+GROMACS: Fast, Flexible and Free
+J. Comp. Chem. (2005)
+https://doi.org/10.1002/jcc.20291
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+E. Lindahl, B. Hess, D. van der Spoel
+GROMACS 3.0: A package for molecular simulation and trajectory analysis
+J. Mol. Mod. (2001)
+https://doi.org/10.1007/s008940100045
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+H. J. C. Berendsen, D. van der Spoel and R. van Drunen
+GROMACS: A message-passing parallel molecular dynamics implementation
+Comp. Phys. Comm. (1995)
+https://doi.org/10.1016/0010-4655(95)00042-E
+-------- -------- --- Thank You --- -------- --------
+
+Input Parameters:
+   integrator                     = md
+   tinit                          = 0
+   dt                             = 0.0055
+   nsteps                         = 20000000
+   init-step                      = 0
+   simulation-part                = 1
+   mts                            = false
+   mass-repartition-factor        = 1
+   comm-mode                      = Linear
+   nstcomm                        = 100
+   bd-fric                        = 0
+   ld-seed                        = -1342185257
+   emtol                          = 10
+   emstep                         = 0.01
+   niter                          = 20
+   fcstep                         = 0
+   nstcgsteep                     = 1000
+   nbfgscorr                      = 10
+   rtpi                           = 0.05
+   nstxout                        = 0
+   nstvout                        = 0
+   nstfout                        = 0
+   nstlog                         = 1000
+   nstcalcenergy                  = 100
+   nstenergy                      = 1000
+   nstxout-compressed             = 1000
+   compressed-x-precision         = 1000
+   cutoff-scheme                  = Verlet
+   nstlist                        = 20
+   pbc                            = xyz
+   periodic-molecules             = false
+   verlet-buffer-tolerance        = -1
+   verlet-buffer-pressure-tolerance = -1
+   rlist                          = 1.35
+   coulombtype                    = Reaction-Field
+   coulomb-modifier               = Potential-shift
+   rcoulomb-switch                = 0
+   rcoulomb                       = 1.1
+   epsilon-r                      = 15
+   epsilon-rf                     = inf
+   vdw-type                       = Cut-off
+   vdw-modifier                   = Potential-shift
+   rvdw-switch                    = 0
+   rvdw                           = 1.1
+   DispCorr                       = No
+   table-extension                = 1
+   fourierspacing                 = 0.12
+   fourier-nx                     = 0
+   fourier-ny                     = 0
+   fourier-nz                     = 0
+   pme-order                      = 4
+   ewald-rtol                     = 1e-05
+   ewald-rtol-lj                  = 0.001
+   lj-pme-comb-rule               = Geometric
+   ewald-geometry                 = 3d
+   epsilon-surface                = 0
+   ensemble-temperature-setting   = constant
+   ensemble-temperature           = 303
+   tcoupl                         = V-rescale
+   nsttcouple                     = 50
+   nh-chain-length                = 0
+   print-nose-hoover-chain-variables = false
+   pcoupl                         = Parrinello-Rahman
+   pcoupltype                     = Isotropic
+   nstpcouple                     = 100
+   tau-p                          = 12
+   compressibility (3x3):
+      compressibility[    0]={ 3.00000e-04,  0.00000e+00,  0.00000e+00}
+      compressibility[    1]={ 0.00000e+00,  3.00000e-04,  0.00000e+00}
+      compressibility[    2]={ 0.00000e+00,  0.00000e+00,  3.00000e-04}
+   ref-p (3x3):
+      ref-p[    0]={ 1.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    1]={ 0.00000e+00,  1.00000e+00,  0.00000e+00}
+      ref-p[    2]={ 0.00000e+00,  0.00000e+00,  1.00000e+00}
+   refcoord-scaling               = COM
+   posres-com (0x3):
+   posres-comB (0x3):
+   QMMM                           = false
+qm-opts:
+   ngQM                           = 0
+   constraint-algorithm           = Lincs
+   continuation                   = false
+   Shake-SOR                      = false
+   shake-tol                      = 0.0001
+   lincs-order                    = 4
+   lincs-iter                     = 1
+   lincs-warnangle                = 30
+   nwall                          = 0
+   wall-type                      = 9-3
+   wall-r-linpot                  = -1
+   wall-atomtype[0]               = -1
+   wall-atomtype[1]               = -1
+   wall-density[0]                = 0
+   wall-density[1]                = 0
+   wall-ewald-zfac                = 3
+   pull                           = true
+   pull-cylinder-r                = 1.5
+   pull-constr-tol                = 1e-06
+   pull-print-COM                 = false
+   pull-print-ref-value           = true
+   pull-print-components          = true
+   pull-nstxout                   = 1000
+   pull-nstfout                   = 1000
+   pull-pbc-ref-prev-step-com     = false
+   pull-xout-average              = false
+   pull-fout-average              = false
+   pull-ngroups                   = 67
+   pull-group 0:
+     atom: not available
+     weight: not available
+     pbcatom                        = -1
+   pull-group 1:
+     atom (1):
+        atom[0]=0
+     weight: not available
+     pbcatom                        = -1
+   pull-group 2:
+     atom (1):
+        atom[0]=414
+     weight: not available
+     pbcatom                        = -1
+   pull-group 3:
+     atom (1):
+        atom[0]=415
+     weight: not available
+     pbcatom                        = -1
+   pull-group 4:
+     atom (1):
+        atom[0]=828
+     weight: not available
+     pbcatom                        = -1
+   pull-group 5:
+     atom (1):
+        atom[0]=829
+     weight: not available
+     pbcatom                        = -1
+   pull-group 6:
+     atom (1):
+        atom[0]=1237
+     weight: not available
+     pbcatom                        = -1
+   pull-group 7:
+     atom (1):
+        atom[0]=1940
+     weight: not available
+     pbcatom                        = -1
+   pull-group 8:
+     atom (1):
+        atom[0]=3729
+     weight: not available
+     pbcatom                        = -1
+   pull-group 9:
+     atom (1):
+        atom[0]=2259
+     weight: not available
+     pbcatom                        = -1
+   pull-group 10:
+     atom (1):
+        atom[0]=4065
+     weight: not available
+     pbcatom                        = -1
+   pull-group 11:
+     atom (1):
+        atom[0]=2582
+     weight: not available
+     pbcatom                        = -1
+   pull-group 12:
+     atom (1):
+        atom[0]=4389
+     weight: not available
+     pbcatom                        = -1
+   pull-group 13:
+     atom (1):
+        atom[0]=4933
+     weight: not available
+     pbcatom                        = -1
+   pull-group 14:
+     atom (1):
+        atom[0]=6722
+     weight: not available
+     pbcatom                        = -1
+   pull-group 15:
+     atom (1):
+        atom[0]=5252
+     weight: not available
+     pbcatom                        = -1
+   pull-group 16:
+     atom (1):
+        atom[0]=7058
+     weight: not available
+     pbcatom                        = -1
+   pull-group 17:
+     atom (1):
+        atom[0]=5575
+     weight: not available
+     pbcatom                        = -1
+   pull-group 18:
+     atom (1):
+        atom[0]=7382
+     weight: not available
+     pbcatom                        = -1
+   pull-group 19:
+     atom (1):
+        atom[0]=7926
+     weight: not available
+     pbcatom                        = -1
+   pull-group 20:
+     atom (1):
+        atom[0]=8341
+     weight: not available
+     pbcatom                        = -1
+   pull-group 21:
+     atom (1):
+        atom[0]=8342
+     weight: not available
+     pbcatom                        = -1
+   pull-group 22:
+     atom (1):
+        atom[0]=8759
+     weight: not available
+     pbcatom                        = -1
+   pull-group 23:
+     atom (1):
+        atom[0]=8760
+     weight: not available
+     pbcatom                        = -1
+   pull-group 24:
+     atom (1):
+        atom[0]=9176
+     weight: not available
+     pbcatom                        = -1
+   pull-group 25:
+     atom (1):
+        atom[0]=9887
+     weight: not available
+     pbcatom                        = -1
+   pull-group 26:
+     atom (1):
+        atom[0]=10311
+     weight: not available
+     pbcatom                        = -1
+   pull-group 27:
+     atom (1):
+        atom[0]=10312
+     weight: not available
+     pbcatom                        = -1
+   pull-group 28:
+     atom (1):
+        atom[0]=10737
+     weight: not available
+     pbcatom                        = -1
+   pull-group 29:
+     atom (1):
+        atom[0]=10738
+     weight: not available
+     pbcatom                        = -1
+   pull-group 30:
+     atom (1):
+        atom[0]=11159
+     weight: not available
+     pbcatom                        = -1
+   pull-group 31:
+     atom (1):
+        atom[0]=11877
+     weight: not available
+     pbcatom                        = -1
+   pull-group 32:
+     atom (1):
+        atom[0]=12301
+     weight: not available
+     pbcatom                        = -1
+   pull-group 33:
+     atom (1):
+        atom[0]=12302
+     weight: not available
+     pbcatom                        = -1
+   pull-group 34:
+     atom (1):
+        atom[0]=12727
+     weight: not available
+     pbcatom                        = -1
+   pull-group 35:
+     atom (1):
+        atom[0]=12728
+     weight: not available
+     pbcatom                        = -1
+   pull-group 36:
+     atom (1):
+        atom[0]=13149
+     weight: not available
+     pbcatom                        = -1
+   pull-group 37:
+     atom (1):
+        atom[0]=13867
+     weight: not available
+     pbcatom                        = -1
+   pull-group 38:
+     atom (1):
+        atom[0]=14281
+     weight: not available
+     pbcatom                        = -1
+   pull-group 39:
+     atom (1):
+        atom[0]=14282
+     weight: not available
+     pbcatom                        = -1
+   pull-group 40:
+     atom (1):
+        atom[0]=14695
+     weight: not available
+     pbcatom                        = -1
+   pull-group 41:
+     atom (1):
+        atom[0]=14696
+     weight: not available
+     pbcatom                        = -1
+   pull-group 42:
+     atom (1):
+        atom[0]=15104
+     weight: not available
+     pbcatom                        = -1
+   pull-group 43:
+     atom (1):
+        atom[0]=15807
+     weight: not available
+     pbcatom                        = -1
+   pull-group 44:
+     atom (1):
+        atom[0]=17596
+     weight: not available
+     pbcatom                        = -1
+   pull-group 45:
+     atom (1):
+        atom[0]=16126
+     weight: not available
+     pbcatom                        = -1
+   pull-group 46:
+     atom (1):
+        atom[0]=17932
+     weight: not available
+     pbcatom                        = -1
+   pull-group 47:
+     atom (1):
+        atom[0]=16449
+     weight: not available
+     pbcatom                        = -1
+   pull-group 48:
+     atom (1):
+        atom[0]=18256
+     weight: not available
+     pbcatom                        = -1
+   pull-group 49:
+     atom (1):
+        atom[0]=18800
+     weight: not available
+     pbcatom                        = -1
+   pull-group 50:
+     atom (1):
+        atom[0]=19215
+     weight: not available
+     pbcatom                        = -1
+   pull-group 51:
+     atom (1):
+        atom[0]=19216
+     weight: not available
+     pbcatom                        = -1
+   pull-group 52:
+     atom (1):
+        atom[0]=19633
+     weight: not available
+     pbcatom                        = -1
+   pull-group 53:
+     atom (1):
+        atom[0]=19634
+     weight: not available
+     pbcatom                        = -1
+   pull-group 54:
+     atom (1):
+        atom[0]=20050
+     weight: not available
+     pbcatom                        = -1
+   pull-group 55:
+     atom (1):
+        atom[0]=20761
+     weight: not available
+     pbcatom                        = -1
+   pull-group 56:
+     atom (1):
+        atom[0]=21175
+     weight: not available
+     pbcatom                        = -1
+   pull-group 57:
+     atom (1):
+        atom[0]=21176
+     weight: not available
+     pbcatom                        = -1
+   pull-group 58:
+     atom (1):
+        atom[0]=21589
+     weight: not available
+     pbcatom                        = -1
+   pull-group 59:
+     atom (1):
+        atom[0]=21590
+     weight: not available
+     pbcatom                        = -1
+   pull-group 60:
+     atom (1):
+        atom[0]=21998
+     weight: not available
+     pbcatom                        = -1
+   pull-group 61:
+     atom (1):
+        atom[0]=22701
+     weight: not available
+     pbcatom                        = -1
+   pull-group 62:
+     atom (1):
+        atom[0]=24490
+     weight: not available
+     pbcatom                        = -1
+   pull-group 63:
+     atom (1):
+        atom[0]=23020
+     weight: not available
+     pbcatom                        = -1
+   pull-group 64:
+     atom (1):
+        atom[0]=24826
+     weight: not available
+     pbcatom                        = -1
+   pull-group 65:
+     atom (1):
+        atom[0]=23343
+     weight: not available
+     pbcatom                        = -1
+   pull-group 66:
+     atom (1):
+        atom[0]=25150
+     weight: not available
+     pbcatom                        = -1
+   pull-ncoords                   = 66
+   pull-coord 0:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 1
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 13.112
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 1:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 2
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -12.4826
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 2:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 3
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 13.528
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 3:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 4
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -12.1826
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 4:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 5
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 13.269
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 5:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 6
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -12.4956
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 6:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 7
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 12.569
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 7:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 8
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -10.6706
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 8:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 9
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 12.478
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 9:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 10
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -10.6316
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 10:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 11
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 13.635
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 11:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 12
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -10.9926
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 12:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 13
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 11.738
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 13:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 14
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -11.4146
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 14:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 15
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 11.808
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 15:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 16
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -11.3686
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 16:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 17
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 12.827
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 17:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 18
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -11.9376
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 18:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 19
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 13.174
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 19:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 20
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -12.1246
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 20:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 21
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 13.351
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 21:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 22
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -12.0436
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 22:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 23
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 13.052
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 23:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 24
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -12.1206
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 24:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 25
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 12.341
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 25:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 26
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -11.3976
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 26:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 27
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 12.397
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 27:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 28
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -10.9936
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 28:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 29
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 12.686
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 29:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 30
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -11.4276
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 30:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 31
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 11.89
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 31:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 32
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -11.9396
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 32:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 33
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 12.195
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 33:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 34
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -11.5256
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 34:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 35
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 12.352
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 35:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 36
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -11.9346
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 36:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 37
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 14.01
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 37:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 38
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -12.1036
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 38:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 39
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 14.321
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 39:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 40
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -11.7836
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 40:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 41
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 14.156
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 41:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 42
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -12.0026
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 42:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 43
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 14.069
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 43:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 44
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -9.95858
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 44:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 45
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 14.008
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 45:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 46
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -9.95558
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 46:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 47
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 14.622
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 47:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 48
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -10.2406
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 48:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 49
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 14.538
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 49:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 50
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -10.3426
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 50:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 51
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 14.723
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 51:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 52
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -10.2216
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 52:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 53
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 14.524
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 53:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 54
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -10.2426
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 54:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 55
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 13.195
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 55:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 56
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -12.5686
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 56:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 57
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 13.577
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 57:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 58
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -12.1866
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 58:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 59
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 13.364
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 59:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 60
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -12.4086
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 60:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 61
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 13.21
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 61:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 62
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -10.8096
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 62:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 63
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 13.075
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 63:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 64
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -10.7056
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   pull-coord 64:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 65
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = 13.788
+   rate                           = 0
+   k                              = 1806
+   kB                             = 1806
+   pull-coord 65:
+   type                           = constant-force
+   geometry                       = direction
+   group[0]                       = 0
+   group[1]                       = 66
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 1.00000e+00
+   start                          = true
+   init                           = -11.3086
+   rate                           = 0
+   k                              = -1806
+   kB                             = -1806
+   awh                            = false
+   rotation                       = false
+   interactiveMD                  = false
+   disre                          = No
+   disre-weighting                = Conservative
+   disre-mixed                    = false
+   dr-fc                          = 1000
+   dr-tau                         = 0
+   nstdisreout                    = 100
+   orire-fc                       = 0
+   orire-tau                      = 0
+   nstorireout                    = 100
+   free-energy                    = no
+   cos-acceleration               = 0
+   deform (3x3):
+      deform[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   simulated-tempering            = false
+   swapcoords                     = no
+   userint1                       = 0
+   userint2                       = 0
+   userint3                       = 0
+   userint4                       = 0
+   userreal1                      = 0
+   userreal2                      = 0
+   userreal3                      = 0
+   userreal4                      = 0
+   applied-forces:
+     electric-field:
+       x:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       y:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       z:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+     density-guided-simulation:
+       active                     = false
+       group                      = protein
+       similarity-measure         = inner-product
+       atom-spreading-weight      = unity
+       force-constant             = 1e+09
+       gaussian-transform-spreading-width = 0.2
+       gaussian-transform-spreading-range-in-multiples-of-width = 4
+       reference-density-filename = reference.mrc
+       nst                        = 1
+       normalize-densities        = true
+       adaptive-force-scaling     = false
+       adaptive-force-scaling-time-constant = 4
+       shift-vector               = 
+       transformation-matrix      = 
+     qmmm-cp2k:
+       active                     = false
+       qmgroup                    = System
+       qmmethod                   = PBE
+       qmfilenames                = 
+       qmcharge                   = 0
+       qmmultiplicity             = 1
+grpopts:
+   nrdf:      131605      509896
+   ref-t:         303         303
+   tau-t:           2           2
+annealing:          No          No
+annealing-npoints:           0           0
+   acc:	           0           0           0
+   nfreeze:           N           N           N
+   energygrp-flags[  0]: 0
+
+Can not increase nstlist because verlet-buffer-tolerance is not set or used
+
+Update groups can not be used for this system because an incompatible virtual site type is used
+
+Update task can not run on the GPU, because the following condition(s) were not satisfied:
+  Virtual sites are not supported.
+  Triangle constraints are not supported.
+
+Local state does not use filler particles
+
+1 GPU selected for this run.
+Mapping of GPU IDs to the 1 GPU task in the 1 rank on this node:
+  PP:0
+PP tasks will do non-perturbed short-ranged interactions on the GPU
+PP task will update and constrain coordinates on the CPU
+Using 1 MPI thread
+Using 20 OpenMP threads 
+
+
+WARNING: Oversubscribing the recommended max load of 8 logical CPUs with 20 threads.
+         This will cause considerable performance loss.
+System total charge: -0.000
+Reaction-Field:
+epsRF = 0, rc = 1.1, krf = 0.375657, crf = 1.36364, epsfac = 9.26236
+The electrostatics potential has its minimum at r = 1.1
+Potential shift: LJ r^-12: -3.186e-01 r^-6: -5.645e-01
+Generated table with 1175 data points for 1-4 COUL.
+Tabscale = 500 points/nm
+Generated table with 1175 data points for 1-4 LJ6.
+Tabscale = 500 points/nm
+Generated table with 1175 data points for 1-4 LJ12.
+Tabscale = 500 points/nm
+
+
+Using GPU 8x4 nonbonded short-range kernels
+
+NBNxM GPU setup: super-cluster 2x2x2
+
+Using a 8x8 pair-list setup:
+  updated every 20 steps, buffer 0.250 nm, rlist 1.350 nm
+
+The average pressure is off by at most 0.00 bar due to missing LJ interactions
+
+Using full Lennard-Jones parameter combination matrix
+Removing pbc first time
+
+NOTE: Oversubscribing available/permitted CPUs, will not pin threads
+
+Will apply potential COM pulling
+with 66 pull coordinates and 66 groups
+with an absolute reference
+Pull group 1:     1 atoms, mass    54.000
+Pull group 2:     1 atoms, mass    36.000
+Pull group 3:     1 atoms, mass    54.000
+Pull group 4:     1 atoms, mass    36.000
+Pull group 5:     1 atoms, mass    54.000
+Pull group 6:     1 atoms, mass    36.000
+Pull group 7:     1 atoms, mass    54.000
+Pull group 8:     1 atoms, mass    36.000
+Pull group 9:     1 atoms, mass    54.000
+Pull group 10:     1 atoms, mass    36.000
+Pull group 11:     1 atoms, mass    54.000
+Pull group 12:     1 atoms, mass    36.000
+Pull group 13:     1 atoms, mass    54.000
+Pull group 14:     1 atoms, mass    36.000
+Pull group 15:     1 atoms, mass    54.000
+Pull group 16:     1 atoms, mass    36.000
+Pull group 17:     1 atoms, mass    54.000
+Pull group 18:     1 atoms, mass    36.000
+Pull group 19:     1 atoms, mass    54.000
+Pull group 20:     1 atoms, mass    36.000
+Pull group 21:     1 atoms, mass    54.000
+Pull group 22:     1 atoms, mass    36.000
+Pull group 23:     1 atoms, mass    54.000
+Pull group 24:     1 atoms, mass    36.000
+Pull group 25:     1 atoms, mass    54.000
+Pull group 26:     1 atoms, mass    36.000
+Pull group 27:     1 atoms, mass    54.000
+Pull group 28:     1 atoms, mass    36.000
+Pull group 29:     1 atoms, mass    54.000
+Pull group 30:     1 atoms, mass    36.000
+Pull group 31:     1 atoms, mass    54.000
+Pull group 32:     1 atoms, mass    36.000
+Pull group 33:     1 atoms, mass    54.000
+Pull group 34:     1 atoms, mass    36.000
+Pull group 35:     1 atoms, mass    54.000
+Pull group 36:     1 atoms, mass    36.000
+Pull group 37:     1 atoms, mass    54.000
+Pull group 38:     1 atoms, mass    36.000
+Pull group 39:     1 atoms, mass    54.000
+Pull group 40:     1 atoms, mass    36.000
+Pull group 41:     1 atoms, mass    54.000
+Pull group 42:     1 atoms, mass    36.000
+Pull group 43:     1 atoms, mass    54.000
+Pull group 44:     1 atoms, mass    36.000
+Pull group 45:     1 atoms, mass    54.000
+Pull group 46:     1 atoms, mass    36.000
+Pull group 47:     1 atoms, mass    54.000
+Pull group 48:     1 atoms, mass    36.000
+Pull group 49:     1 atoms, mass    54.000
+Pull group 50:     1 atoms, mass    36.000
+Pull group 51:     1 atoms, mass    54.000
+Pull group 52:     1 atoms, mass    36.000
+Pull group 53:     1 atoms, mass    54.000
+Pull group 54:     1 atoms, mass    36.000
+Pull group 55:     1 atoms, mass    54.000
+Pull group 56:     1 atoms, mass    36.000
+Pull group 57:     1 atoms, mass    54.000
+Pull group 58:     1 atoms, mass    36.000
+Pull group 59:     1 atoms, mass    54.000
+Pull group 60:     1 atoms, mass    36.000
+Pull group 61:     1 atoms, mass    54.000
+Pull group 62:     1 atoms, mass    36.000
+Pull group 63:     1 atoms, mass    54.000
+Pull group 64:     1 atoms, mass    36.000
+Pull group 65:     1 atoms, mass    54.000
+Pull group 66:     1 atoms, mass    36.000
+
+Initializing LINear Constraint Solver
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess
+P-LINCS: A Parallel Linear Constraint Solver for molecular simulation
+J. Chem. Theory Comput. (2008)
+https://doi.org/10.1021/ct700200b
+-------- -------- --- Thank You --- -------- --------
+
+The number of constraints is 8524
+1901 constraints are involved in constraint triangles,
+will apply an additional matrix expansion of order 4 for couplings
+between constraints inside triangles
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+G. Bussi, D. Donadio, M. Parrinello
+Canonical sampling through velocity rescaling
+J. Chem. Phys. (2007)
+https://doi.org/10.1063/1.2408420
+-------- -------- --- Thank You --- -------- --------
+
+There are: 216676 Atoms
+There are: 26118 VSites
+
+Constraining the starting coordinates (step 0)
+
+Constraining the coordinates at t0-dt (step 0)
+Center of mass motion removal mode is Linear
+We have the following groups for center of mass motion removal:
+  0:  rest
+RMS relative constraint deviation after constraining: 1.00e-05
+Initial temperature: 303.37 K
+
+Started mdrun on rank 0 Mon May 18 14:23:57 2026
+
+           Step           Time
+              0        0.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    2.10720e+05    1.26023e+05    1.97613e+04    3.10296e+04   -2.87221e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98663e+06   -3.88380e+04    1.47027e+06   -3.45488e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09889e+05   -2.64499e+06   -2.64360e+06    3.03685e+02   -1.48210e+03
+   Constr. rmsd
+    2.01484e-05
+
+           Step           Time
+           1000        5.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    3.03731e+05    1.32637e+05    2.12017e+04    3.15054e+04   -2.86141e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.94251e+06   -3.86733e+04    1.17776e+06   -3.60049e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.72201e+05   -2.72829e+06   -2.62528e+06    3.27051e+02   -1.45033e+03
+   Constr. rmsd
+    1.93985e-05
+
+           Step           Time
+           2000       11.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    3.67142e+05    1.35817e+05    2.17400e+04    3.12104e+04   -2.85478e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.94071e+06   -3.83991e+04    9.72129e+05   -3.73655e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.62474e+05   -2.87407e+06   -2.62045e+06    3.23403e+02   -1.44147e+03
+   Constr. rmsd
+    1.78285e-05
+
+           Step           Time
+           3000       16.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    4.17448e+05    1.39256e+05    2.22636e+04    3.15964e+04   -2.84797e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.94104e+06   -3.79547e+04    8.27667e+05   -3.82556e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.44445e+05   -2.98111e+06   -2.61584e+06    3.16643e+02   -1.42920e+03
+   Constr. rmsd
+    1.64555e-05
+
+           Step           Time
+           4000       22.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    4.68168e+05    1.41671e+05    2.20787e+04    3.25600e+04   -2.83672e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.95162e+06   -3.78553e+04    7.23230e+05   -3.88544e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.30014e+05   -3.05543e+06   -2.61608e+06    3.11232e+02   -1.40680e+03
+   Constr. rmsd
+    1.75223e-05
+
+           Step           Time
+           5000       27.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    5.15761e+05    1.44915e+05    2.20682e+04    3.33965e+04   -2.81606e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.94563e+06   -3.77252e+04    6.54428e+05   -3.89440e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.19206e+05   -3.07519e+06   -2.60996e+06    3.07179e+02   -1.40609e+03
+   Constr. rmsd
+    1.96671e-05
+
+           Step           Time
+           6000       33.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    5.43821e+05    1.46915e+05    2.20602e+04    3.47111e+04   -2.80914e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.93900e+06   -3.77524e+04    6.16489e+05   -3.89367e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10709e+05   -3.08296e+06   -2.60107e+06    3.03993e+02   -1.42036e+03
+   Constr. rmsd
+    1.85157e-05
+
+           Step           Time
+           7000       38.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    5.60022e+05    1.48324e+05    2.18392e+04    3.42700e+04   -2.80727e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.93553e+06   -3.76947e+04    5.91955e+05   -3.89754e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08860e+05   -3.08868e+06   -2.59868e+06    3.03300e+02   -1.43252e+03
+   Constr. rmsd
+    1.83286e-05
+
+           Step           Time
+           8000       44.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    5.69703e+05    1.48955e+05    2.15282e+04    3.49106e+04   -2.79842e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.93324e+06   -3.76933e+04    5.75363e+05   -3.90032e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09929e+05   -3.09039e+06   -2.59607e+06    3.03700e+02   -1.45247e+03
+   Constr. rmsd
+    1.95247e-05
+
+           Step           Time
+           9000       49.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    5.85514e+05    1.50397e+05    2.14279e+04    3.43322e+04   -2.79520e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.93366e+06   -3.77778e+04    5.53023e+05   -3.90627e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.15059e+05   -3.09121e+06   -2.58701e+06    3.05624e+02   -1.48119e+03
+   Constr. rmsd
+    2.01301e-05
+
+           Step           Time
+          10000       55.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    5.93869e+05    1.51418e+05    2.14511e+04    3.45849e+04   -2.80316e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.94141e+06   -3.78588e+04    5.35362e+05   -3.92290e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.13216e+05   -3.10968e+06   -2.58891e+06    3.04933e+02   -1.50800e+03
+   Constr. rmsd
+    1.82811e-05
+
+           Step           Time
+          11000       60.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    5.98643e+05    1.51089e+05    2.14909e+04    3.44413e+04   -2.79415e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.94869e+06   -3.77798e+04    5.23076e+05   -3.93714e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.12046e+05   -3.12510e+06   -2.58770e+06    3.04494e+02   -1.53018e+03
+   Constr. rmsd
+    1.59122e-05
+
+           Step           Time
+          12000       66.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.01459e+05    1.51931e+05    2.13685e+04    3.45386e+04   -2.80250e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.95381e+06   -3.77093e+04    5.12766e+05   -3.94971e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.13081e+05   -3.13663e+06   -2.58779e+06    3.04882e+02   -1.54531e+03
+   Constr. rmsd
+    1.77992e-05
+
+           Step           Time
+          13000       71.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.00129e+05    1.52014e+05    2.12953e+04    3.47821e+04   -2.79889e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.95848e+06   -3.78222e+04    5.08416e+05   -3.95956e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11954e+05   -3.14760e+06   -2.58789e+06    3.04460e+02   -1.52843e+03
+   Constr. rmsd
+    1.60324e-05
+
+           Step           Time
+          14000       77.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    5.98286e+05    1.50290e+05    2.12256e+04    3.47042e+04   -2.79799e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.96611e+06   -3.77801e+04    5.05958e+05   -3.97322e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11332e+05   -3.16189e+06   -2.58965e+06    3.04226e+02   -1.51781e+03
+   Constr. rmsd
+    1.79700e-05
+
+           Step           Time
+          15000       82.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    5.95340e+05    1.50169e+05    2.09736e+04    3.44427e+04   -2.80322e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.96918e+06   -3.77872e+04    5.07499e+05   -3.97887e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10066e+05   -3.16880e+06   -2.58786e+06    3.03752e+02   -1.51140e+03
+   Constr. rmsd
+    1.49919e-05
+
+           Step           Time
+          16000       88.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    5.90958e+05    1.49787e+05    2.08212e+04    3.45005e+04   -2.79840e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.96722e+06   -3.78861e+04    5.10437e+05   -3.97844e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07944e+05   -3.17050e+06   -2.58508e+06    3.02956e+02   -1.49001e+03
+   Constr. rmsd
+    2.05176e-05
+
+           Step           Time
+          17000       93.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    5.91650e+05    1.49096e+05    2.09460e+04    3.47575e+04   -2.79924e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.96222e+06   -3.77946e+04    5.13246e+05   -3.97024e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07252e+05   -3.16299e+06   -2.57378e+06    3.02697e+02   -1.50361e+03
+   Constr. rmsd
+    1.76411e-05
+
+           Step           Time
+          18000       99.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    5.92185e+05    1.48898e+05    2.08326e+04    3.50729e+04   -2.80027e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.96100e+06   -3.77229e+04    5.12883e+05   -3.96888e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07741e+05   -3.16114e+06   -2.56965e+06    3.02880e+02   -1.50739e+03
+   Constr. rmsd
+    1.78942e-05
+
+           Step           Time
+          19000      104.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    5.90071e+05    1.48929e+05    2.06704e+04    3.52705e+04   -2.79554e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.96491e+06   -3.79412e+04    5.09520e+05   -3.97795e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09345e+05   -3.16860e+06   -2.57101e+06    3.03481e+02   -1.47843e+03
+   Constr. rmsd
+    1.96782e-05
+
+           Step           Time
+          20000      110.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    5.90874e+05    1.49061e+05    2.09263e+04    3.51779e+04   -2.79605e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.96535e+06   -3.78709e+04    5.06666e+05   -3.98013e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10921e+05   -3.16920e+06   -2.56580e+06    3.04072e+02   -1.47132e+03
+   Constr. rmsd
+    1.86854e-05
+
+           Step           Time
+          21000      115.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    5.98459e+05    1.48246e+05    2.11469e+04    3.45509e+04   -2.79384e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.96185e+06   -3.78707e+04    4.99487e+05   -3.97721e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.12653e+05   -3.16456e+06   -2.56032e+06    3.04722e+02   -1.49096e+03
+   Constr. rmsd
+    1.84682e-05
+
+           Step           Time
+          22000      121.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.02074e+05    1.50886e+05    2.08497e+04    3.49861e+04   -2.79766e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.96487e+06   -3.77317e+04    4.92651e+05   -3.98092e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.12213e+05   -3.16871e+06   -2.55784e+06    3.04557e+02   -1.51005e+03
+   Constr. rmsd
+    2.04702e-05
+
+           Step           Time
+          23000      126.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.03134e+05    1.49443e+05    2.09026e+04    3.50154e+04   -2.79235e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.96892e+06   -3.77008e+04    4.88922e+05   -3.98844e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10018e+05   -3.17842e+06   -2.55770e+06    3.03734e+02   -1.51737e+03
+   Constr. rmsd
+    1.92222e-05
+
+           Step           Time
+          24000      132.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.01248e+05    1.50447e+05    2.09001e+04    3.48354e+04   -2.79601e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97050e+06   -3.78585e+04    4.87572e+05   -3.99296e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08866e+05   -3.18410e+06   -2.55832e+06    3.03302e+02   -1.50186e+03
+   Constr. rmsd
+    1.52250e-05
+
+           Step           Time
+          25000      137.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.04578e+05    1.48995e+05    2.08705e+04    3.50488e+04   -2.79949e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.96956e+06   -3.78586e+04    4.86228e+05   -3.99164e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10439e+05   -3.18121e+06   -2.55051e+06    3.03892e+02   -1.49606e+03
+   Constr. rmsd
+    1.67876e-05
+
+           Step           Time
+          26000      143.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.02291e+05    1.48814e+05    2.08487e+04    3.52409e+04   -2.79646e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97154e+06   -3.77793e+04    4.87400e+05   -3.99437e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11021e+05   -3.18335e+06   -2.54832e+06    3.04110e+02   -1.48639e+03
+   Constr. rmsd
+    1.89152e-05
+
+           Step           Time
+          27000      148.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.01130e+05    1.47797e+05    2.10233e+04    3.52945e+04   -2.79150e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97273e+06   -3.79067e+04    4.87441e+05   -3.99710e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08983e+05   -3.18812e+06   -2.54838e+06    3.03346e+02   -1.47538e+03
+   Constr. rmsd
+    1.86582e-05
+
+           Step           Time
+          28000      154.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.02765e+05    1.48584e+05    2.07002e+04    3.51410e+04   -2.79213e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97199e+06   -3.79970e+04    4.86320e+05   -3.99569e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11301e+05   -3.18439e+06   -2.54441e+06    3.04215e+02   -1.48167e+03
+   Constr. rmsd
+    1.91999e-05
+
+           Step           Time
+          29000      159.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.03107e+05    1.48775e+05    2.05089e+04    3.54554e+04   -2.78735e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97163e+06   -3.79299e+04    4.84927e+05   -3.99552e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09466e+05   -3.18606e+06   -2.54306e+06    3.03527e+02   -1.47862e+03
+   Constr. rmsd
+    1.93583e-05
+
+           Step           Time
+          30000      165.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.03010e+05    1.48119e+05    2.05592e+04    3.54501e+04   -2.78900e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.96497e+06   -3.79341e+04    4.88092e+05   -3.98657e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.06691e+05   -3.17988e+06   -2.53777e+06    3.02486e+02   -1.49106e+03
+   Constr. rmsd
+    1.95662e-05
+
+           Step           Time
+          31000      170.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.02167e+05    1.48863e+05    2.08239e+04    3.55983e+04   -2.79764e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.96675e+06   -3.79036e+04    4.85862e+05   -3.99110e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11551e+05   -3.17955e+06   -2.53608e+06    3.04309e+02   -1.48514e+03
+   Constr. rmsd
+    1.95530e-05
+
+           Step           Time
+          32000      176.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.03081e+05    1.49037e+05    2.05880e+04    3.54084e+04   -2.79351e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97263e+06   -3.79221e+04    4.82012e+05   -3.99978e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09701e+05   -3.19007e+06   -2.53644e+06    3.03615e+02   -1.48717e+03
+   Constr. rmsd
+    1.86028e-05
+
+           Step           Time
+          33000      181.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.07661e+05    1.48740e+05    2.09680e+04    3.51400e+04   -2.79147e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97192e+06   -3.79074e+04    4.78271e+05   -3.99820e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11180e+05   -3.18702e+06   -2.53052e+06    3.04170e+02   -1.50639e+03
+   Constr. rmsd
+    1.83255e-05
+
+           Step           Time
+          34000      187.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.07422e+05    1.47981e+05    2.09031e+04    3.56300e+04   -2.78885e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97039e+06   -3.78301e+04    4.77684e+05   -3.99748e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.06336e+05   -3.19115e+06   -2.52886e+06    3.02353e+02   -1.49575e+03
+   Constr. rmsd
+    1.84393e-05
+
+           Step           Time
+          35000      192.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.06444e+05    1.49330e+05    2.06025e+04    3.50755e+04   -2.78584e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97489e+06   -3.79064e+04    4.75795e+05   -4.00414e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08264e+05   -3.19587e+06   -2.52816e+06    3.03076e+02   -1.50235e+03
+   Constr. rmsd
+    2.01728e-05
+
+           Step           Time
+          36000      198.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.06804e+05    1.48630e+05    2.04422e+04    3.53356e+04   -2.78977e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97508e+06   -3.80009e+04    4.74487e+05   -4.00636e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10975e+05   -3.19539e+06   -2.52887e+06    3.04093e+02   -1.47760e+03
+   Constr. rmsd
+    1.84728e-05
+
+           Step           Time
+          37000      203.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.06785e+05    1.48908e+05    2.07193e+04    3.52609e+04   -2.78474e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97569e+06   -3.78157e+04    4.74516e+05   -4.00579e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07278e+05   -3.19851e+06   -2.52377e+06    3.02707e+02   -1.48199e+03
+   Constr. rmsd
+    1.94891e-05
+
+           Step           Time
+          38000      209.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.06216e+05    1.48237e+05    2.06756e+04    3.58425e+04   -2.78790e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97642e+06   -3.77615e+04    4.73691e+05   -4.00831e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10446e+05   -3.19786e+06   -2.52239e+06    3.03894e+02   -1.46582e+03
+   Constr. rmsd
+    1.86136e-05
+
+           Step           Time
+          39000      214.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.08819e+05    1.48132e+05    2.06721e+04    3.51910e+04   -2.78747e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97559e+06   -3.77487e+04    4.72541e+05   -4.00673e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11068e+05   -3.19566e+06   -2.51996e+06    3.04128e+02   -1.48191e+03
+   Constr. rmsd
+    2.06425e-05
+
+           Step           Time
+          40000      220.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.10620e+05    1.47286e+05    2.09059e+04    3.61891e+04   -2.78329e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97197e+06   -3.78243e+04    4.71562e+05   -4.00156e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09250e+05   -3.19231e+06   -2.51704e+06    3.03446e+02   -1.47846e+03
+   Constr. rmsd
+    1.98958e-05
+
+           Step           Time
+          41000      225.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.10539e+05    1.46937e+05    2.05883e+04    3.55854e+04   -2.78121e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97429e+06   -3.78714e+04    4.70072e+05   -4.00656e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11743e+05   -3.19482e+06   -2.51513e+06    3.04381e+02   -1.46527e+03
+   Constr. rmsd
+    2.01639e-05
+
+           Step           Time
+          42000      231.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.08803e+05    1.47508e+05    2.06449e+04    3.54213e+04   -2.78436e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97082e+06   -3.78318e+04    4.72658e+05   -4.00205e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11874e+05   -3.19018e+06   -2.51204e+06    3.04430e+02   -1.47599e+03
+   Constr. rmsd
+    1.73299e-05
+
+           Step           Time
+          43000      236.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.08148e+05    1.48608e+05    2.06685e+04    3.54909e+04   -2.78265e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97468e+06   -3.77560e+04    4.69669e+05   -4.00811e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10132e+05   -3.19798e+06   -2.51081e+06    3.03777e+02   -1.47543e+03
+   Constr. rmsd
+    1.73308e-05
+
+           Step           Time
+          44000      242.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.07818e+05    1.48099e+05    2.06179e+04    3.55268e+04   -2.78785e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97428e+06   -3.79857e+04    4.69321e+05   -4.00967e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.12135e+05   -3.19753e+06   -2.50997e+06    3.04528e+02   -1.47326e+03
+   Constr. rmsd
+    2.04790e-05
+
+           Step           Time
+          45000      247.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.10631e+05    1.48102e+05    2.05777e+04    3.57026e+04   -2.78887e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97422e+06   -3.79946e+04    4.67025e+05   -4.00906e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.12940e+05   -3.19612e+06   -2.50798e+06    3.04829e+02   -1.47805e+03
+   Constr. rmsd
+    1.80631e-05
+
+           Step           Time
+          46000      253.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.12753e+05    1.48033e+05    2.06269e+04    3.54912e+04   -2.78573e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97396e+06   -3.80422e+04    4.65000e+05   -4.00867e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08580e+05   -3.20009e+06   -2.50682e+06    3.03195e+02   -1.47722e+03
+   Constr. rmsd
+    1.83282e-05
+
+           Step           Time
+          47000      258.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.11947e+05    1.48537e+05    2.04546e+04    3.57565e+04   -2.78314e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97659e+06   -3.81560e+04    4.64254e+05   -4.01211e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.12279e+05   -3.19983e+06   -2.50525e+06    3.04582e+02   -1.47279e+03
+   Constr. rmsd
+    1.98815e-05
+
+           Step           Time
+          48000      264.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.14486e+05    1.47233e+05    2.07045e+04    3.56581e+04   -2.77778e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97410e+06   -3.80140e+04    4.63220e+05   -4.00859e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11937e+05   -3.19666e+06   -2.50017e+06    3.04453e+02   -1.48685e+03
+   Constr. rmsd
+    1.77723e-05
+
+           Step           Time
+          49000      269.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.10759e+05    1.46872e+05    2.05776e+04    3.61946e+04   -2.78161e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97943e+06   -3.80762e+04    4.63966e+05   -4.01730e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08803e+05   -3.20850e+06   -2.50034e+06    3.03278e+02   -1.46838e+03
+   Constr. rmsd
+    2.02143e-05
+
+           Step           Time
+          50000      275.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.09870e+05    1.46483e+05    2.04360e+04    3.58098e+04   -2.78379e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98206e+06   -3.81835e+04    4.64086e+05   -4.02193e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09177e+05   -3.21276e+06   -2.50048e+06    3.03418e+02   -1.46394e+03
+   Constr. rmsd
+    1.80313e-05
+
+           Step           Time
+          51000      280.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.11005e+05    1.47477e+05    2.03987e+04    3.61110e+04   -2.78492e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97875e+06   -3.82120e+04    4.63624e+05   -4.01684e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09943e+05   -3.20690e+06   -2.49404e+06    3.03706e+02   -1.47950e+03
+   Constr. rmsd
+    1.94973e-05
+
+           Step           Time
+          52000      286.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.12600e+05    1.47021e+05    2.03389e+04    3.66031e+04   -2.77962e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97704e+06   -3.81345e+04    4.62862e+05   -4.01371e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10230e+05   -3.20348e+06   -2.48991e+06    3.03813e+02   -1.50022e+03
+   Constr. rmsd
+    1.81825e-05
+
+           Step           Time
+          53000      291.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.14901e+05    1.47909e+05    2.03491e+04    3.59939e+04   -2.77804e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97621e+06   -3.81364e+04    4.60039e+05   -4.01296e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08131e+05   -3.20483e+06   -2.48892e+06    3.03026e+02   -1.51072e+03
+   Constr. rmsd
+    1.99470e-05
+
+           Step           Time
+          54000      297.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.15144e+05    1.47513e+05    2.07165e+04    3.65460e+04   -2.78102e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97697e+06   -3.80782e+04    4.59155e+05   -4.01407e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09362e+05   -3.20471e+06   -2.48006e+06    3.03488e+02   -1.49345e+03
+   Constr. rmsd
+    1.88744e-05
+
+           Step           Time
+          55000      302.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.14161e+05    1.47104e+05    2.05088e+04    3.59025e+04   -2.77930e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97936e+06   -3.80481e+04    4.58288e+05   -4.01937e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07720e+05   -3.21165e+06   -2.47873e+06    3.02872e+02   -1.48992e+03
+   Constr. rmsd
+    2.15147e-05
+
+           Step           Time
+          56000      308.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.14866e+05    1.47095e+05    2.07483e+04    3.58374e+04   -2.77642e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97749e+06   -3.78210e+04    4.58342e+05   -4.01606e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08120e+05   -3.20794e+06   -2.47600e+06    3.03022e+02   -1.49806e+03
+   Constr. rmsd
+    1.70245e-05
+
+           Step           Time
+          57000      313.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.14503e+05    1.47837e+05    2.04006e+04    3.61476e+04   -2.77856e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98104e+06   -3.79568e+04    4.58233e+05   -4.01974e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07124e+05   -3.21261e+06   -2.47449e+06    3.02649e+02   -1.50549e+03
+   Constr. rmsd
+    1.97462e-05
+
+           Step           Time
+          58000      319.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.20083e+05    1.46147e+05    2.06840e+04    3.63188e+04   -2.78308e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97754e+06   -3.79531e+04    4.54831e+05   -4.01574e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09091e+05   -3.20665e+06   -2.47040e+06    3.03386e+02   -1.50434e+03
+   Constr. rmsd
+    1.94326e-05
+
+           Step           Time
+          59000      324.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.17442e+05    1.46631e+05    2.04083e+04    3.63894e+04   -2.77975e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97843e+06   -3.79614e+04    4.56403e+05   -4.01709e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07338e+05   -3.20975e+06   -2.46803e+06    3.02729e+02   -1.51021e+03
+   Constr. rmsd
+    1.78605e-05
+
+           Step           Time
+          60000      330.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.14177e+05    1.47625e+05    2.03419e+04    3.59051e+04   -2.77587e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97785e+06   -3.81185e+04    4.58063e+05   -4.01744e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07036e+05   -3.21041e+06   -2.46690e+06    3.02616e+02   -1.50337e+03
+   Constr. rmsd
+    1.62326e-05
+
+           Step           Time
+          61000      335.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.15781e+05    1.46149e+05    2.06790e+04    3.58836e+04   -2.77893e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97975e+06   -3.81184e+04    4.56960e+05   -4.02031e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09892e+05   -3.21042e+06   -2.46231e+06    3.03687e+02   -1.50033e+03
+   Constr. rmsd
+    1.76197e-05
+
+           Step           Time
+          62000      341.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.12943e+05    1.47654e+05    2.03817e+04    3.61294e+04   -2.77668e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97836e+06   -3.80404e+04    4.58176e+05   -4.01879e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08562e+05   -3.21023e+06   -2.46139e+06    3.03188e+02   -1.49276e+03
+   Constr. rmsd
+    1.80185e-05
+
+           Step           Time
+          63000      346.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.14933e+05    1.46401e+05    2.07186e+04    3.58282e+04   -2.77863e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97926e+06   -3.80827e+04    4.56980e+05   -4.02034e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08840e+05   -3.21150e+06   -2.46131e+06    3.03292e+02   -1.48094e+03
+   Constr. rmsd
+    1.88478e-05
+
+           Step           Time
+          64000      352.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.16361e+05    1.46025e+05    2.08082e+04    3.62423e+04   -2.77632e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98210e+06   -3.80753e+04    4.56054e+05   -4.02231e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09364e+05   -3.21295e+06   -2.45919e+06    3.03489e+02   -1.50635e+03
+   Constr. rmsd
+    1.84814e-05
+
+           Step           Time
+          65000      357.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.17155e+05    1.46996e+05    2.04715e+04    3.61734e+04   -2.77930e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97411e+06   -3.80676e+04    4.55944e+05   -4.01337e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09690e+05   -3.20368e+06   -2.45333e+06    3.03611e+02   -1.50595e+03
+   Constr. rmsd
+    1.72125e-05
+
+           Step           Time
+          66000      363.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.18067e+05    1.47026e+05    2.03626e+04    3.61151e+04   -2.77866e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97329e+06   -3.80284e+04    4.55354e+05   -4.01226e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09724e+05   -3.20254e+06   -2.45109e+06    3.03624e+02   -1.52609e+03
+   Constr. rmsd
+    1.86065e-05
+
+           Step           Time
+          67000      368.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.17938e+05    1.46432e+05    2.07345e+04    3.61195e+04   -2.77789e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97514e+06   -3.79954e+04    4.54661e+05   -4.01504e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09333e+05   -3.20571e+06   -2.45165e+06    3.03477e+02   -1.49592e+03
+   Constr. rmsd
+    2.04331e-05
+
+           Step           Time
+          68000      374.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.15128e+05    1.46634e+05    2.04565e+04    3.66691e+04   -2.77837e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97660e+06   -3.81100e+04    4.56680e+05   -4.01698e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10501e+05   -3.20648e+06   -2.44994e+06    3.03915e+02   -1.50084e+03
+   Constr. rmsd
+    1.61724e-05
+
+           Step           Time
+          69000      379.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.15491e+05    1.47011e+05    2.04875e+04    3.59776e+04   -2.77328e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97391e+06   -3.80534e+04    4.55034e+05   -4.01529e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09302e+05   -3.20598e+06   -2.45002e+06    3.03465e+02   -1.47929e+03
+   Constr. rmsd
+    1.67478e-05
+
+           Step           Time
+          70000      385.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.13800e+05    1.46123e+05    2.04963e+04    3.65722e+04   -2.77891e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97848e+06   -3.80840e+04    4.56502e+05   -4.02097e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09841e+05   -3.21113e+06   -2.44807e+06    3.03667e+02   -1.48008e+03
+   Constr. rmsd
+    1.85414e-05
+
+           Step           Time
+          71000      390.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.12518e+05    1.45664e+05    2.05392e+04    3.66788e+04   -2.78002e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98000e+06   -3.80918e+04    4.56728e+05   -4.02396e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.14098e+05   -3.20987e+06   -2.44840e+06    3.05264e+02   -1.45788e+03
+   Constr. rmsd
+    1.99632e-05
+
+           Step           Time
+          72000      396.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.11416e+05    1.46289e+05    2.05092e+04    3.67799e+04   -2.77699e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97779e+06   -3.80682e+04    4.57530e+05   -4.02103e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11976e+05   -3.20906e+06   -2.44622e+06    3.04468e+02   -1.46605e+03
+   Constr. rmsd
+    1.80325e-05
+
+           Step           Time
+          73000      401.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.12692e+05    1.45427e+05    2.02592e+04    3.59659e+04   -2.77819e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98008e+06   -3.80184e+04    4.55998e+05   -4.02558e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10993e+05   -3.21458e+06   -2.44456e+06    3.04099e+02   -1.46843e+03
+   Constr. rmsd
+    1.66657e-05
+
+           Step           Time
+          74000      407.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.12429e+05    1.45654e+05    2.04376e+04    3.64395e+04   -2.78265e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98190e+06   -3.81303e+04    4.54055e+05   -4.02928e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11549e+05   -3.21774e+06   -2.44512e+06    3.04308e+02   -1.44153e+03
+   Constr. rmsd
+    1.94001e-05
+
+           Step           Time
+          75000      412.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.12351e+05    1.46597e+05    2.03389e+04    3.65932e+04   -2.78154e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98345e+06   -3.81479e+04    4.53263e+05   -4.03061e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08908e+05   -3.22171e+06   -2.44405e+06    3.03318e+02   -1.46650e+03
+   Constr. rmsd
+    2.01046e-05
+
+           Step           Time
+          76000      418.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.17022e+05    1.44588e+05    2.03337e+04    3.61321e+04   -2.77608e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98173e+06   -3.79752e+04    4.52305e+05   -4.02693e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10072e+05   -3.21686e+06   -2.43760e+06    3.03754e+02   -1.48769e+03
+   Constr. rmsd
+    1.89855e-05
+
+           Step           Time
+          77000      423.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.17799e+05    1.45408e+05    2.02751e+04    3.66046e+04   -2.77765e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97589e+06   -3.81948e+04    4.51241e+05   -4.02053e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09005e+05   -3.21152e+06   -2.43259e+06    3.03354e+02   -1.49335e+03
+   Constr. rmsd
+    1.86176e-05
+
+           Step           Time
+          78000      429.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.16502e+05    1.46882e+05    2.06193e+04    3.66321e+04   -2.77527e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98308e+06   -3.81452e+04    4.49433e+05   -4.02869e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11292e+05   -3.21740e+06   -2.43511e+06    3.04212e+02   -1.47340e+03
+   Constr. rmsd
+    1.83043e-05
+
+           Step           Time
+          79000      434.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.17983e+05    1.46915e+05    2.01485e+04    3.64826e+04   -2.77317e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98300e+06   -3.81342e+04    4.48050e+05   -4.02887e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08568e+05   -3.22030e+06   -2.43067e+06    3.03190e+02   -1.49448e+03
+   Constr. rmsd
+    1.71829e-05
+
+           Step           Time
+          80000      440.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.22105e+05    1.46151e+05    2.03688e+04    3.64360e+04   -2.77609e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97794e+06   -3.81924e+04    4.46529e+05   -4.02215e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07922e+05   -3.21423e+06   -2.42782e+06    3.02948e+02   -1.50317e+03
+   Constr. rmsd
+    1.70140e-05
+
+           Step           Time
+          81000      445.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.20510e+05    1.46417e+05    2.01565e+04    3.64162e+04   -2.77699e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97882e+06   -3.81675e+04    4.47028e+05   -4.02416e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08668e+05   -3.21549e+06   -2.42358e+06    3.03228e+02   -1.49456e+03
+   Constr. rmsd
+    1.64893e-05
+
+           Step           Time
+          82000      451.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.21683e+05    1.47055e+05    2.05141e+04    3.64565e+04   -2.77711e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97652e+06   -3.83085e+04    4.46190e+05   -4.02064e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11875e+05   -3.20876e+06   -2.41989e+06    3.04430e+02   -1.49703e+03
+   Constr. rmsd
+    1.90046e-05
+
+           Step           Time
+          83000      456.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.19680e+05    1.47341e+05    2.05640e+04    3.66292e+04   -2.77669e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97758e+06   -3.82435e+04    4.46818e+05   -4.02246e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09045e+05   -3.21341e+06   -2.41963e+06    3.03369e+02   -1.49641e+03
+   Constr. rmsd
+    1.84073e-05
+
+           Step           Time
+          84000      462.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.22651e+05    1.46569e+05    2.02253e+04    3.62667e+04   -2.77598e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97752e+06   -3.81911e+04    4.45794e+05   -4.02180e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07601e+05   -3.21420e+06   -2.41797e+06    3.02827e+02   -1.50209e+03
+   Constr. rmsd
+    1.62034e-05
+
+           Step           Time
+          85000      467.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.20852e+05    1.47043e+05    2.01614e+04    3.66293e+04   -2.77302e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97744e+06   -3.81837e+04    4.46385e+05   -4.02186e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08164e+05   -3.21369e+06   -2.41743e+06    3.03039e+02   -1.49690e+03
+   Constr. rmsd
+    1.86278e-05
+
+           Step           Time
+          86000      473.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.19117e+05    1.47371e+05    2.03590e+04    3.65705e+04   -2.77708e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97499e+06   -3.82941e+04    4.49208e+05   -4.01836e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09072e+05   -3.20929e+06   -2.41310e+06    3.03379e+02   -1.49633e+03
+   Constr. rmsd
+    1.78122e-05
+
+           Step           Time
+          87000      478.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.19461e+05    1.46294e+05    2.03194e+04    3.70300e+04   -2.77192e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97908e+06   -3.81129e+04    4.47124e+05   -4.02415e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08981e+05   -3.21517e+06   -2.41398e+06    3.03345e+02   -1.49371e+03
+   Constr. rmsd
+    2.00512e-05
+
+           Step           Time
+          88000      484.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.19713e+05    1.46367e+05    2.04431e+04    3.68047e+04   -2.78060e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97886e+06   -3.81285e+04    4.46708e+05   -4.02501e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11508e+05   -3.21350e+06   -2.40979e+06    3.04292e+02   -1.49342e+03
+   Constr. rmsd
+    1.81354e-05
+
+           Step           Time
+          89000      489.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.19779e+05    1.45418e+05    2.05841e+04    3.70210e+04   -2.77286e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98529e+06   -3.82592e+04    4.43507e+05   -4.03452e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11527e+05   -3.22300e+06   -2.40912e+06    3.04300e+02   -1.48801e+03
+   Constr. rmsd
+    1.67657e-05
+
+           Step           Time
+          90000      495.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.21262e+05    1.46149e+05    2.05782e+04    3.71163e+04   -2.77606e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97907e+06   -3.80605e+04    4.44778e+05   -4.02485e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11574e+05   -3.21328e+06   -2.40065e+06    3.04317e+02   -1.47902e+03
+   Constr. rmsd
+    1.92787e-05
+
+           Step           Time
+          91000      500.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.16653e+05    1.46058e+05    2.04227e+04    3.73004e+04   -2.77857e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98400e+06   -3.81746e+04    4.45865e+05   -4.03373e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10350e+05   -3.22338e+06   -2.40156e+06    3.03858e+02   -1.47255e+03
+   Constr. rmsd
+    2.02256e-05
+
+           Step           Time
+          92000      506.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.16903e+05    1.45732e+05    2.03443e+04    3.66481e+04   -2.77603e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98298e+06   -3.81883e+04    4.46963e+05   -4.03218e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07333e+05   -3.22484e+06   -2.39776e+06    3.02727e+02   -1.47759e+03
+   Constr. rmsd
+    1.81128e-05
+
+           Step           Time
+          93000      511.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.18246e+05    1.45460e+05    2.05739e+04    3.75149e+04   -2.77791e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98475e+06   -3.83813e+04    4.46154e+05   -4.03297e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10274e+05   -3.22270e+06   -2.39568e+06    3.03830e+02   -1.48020e+03
+   Constr. rmsd
+    1.70460e-05
+
+           Step           Time
+          94000      517.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.17924e+05    1.45477e+05    2.07130e+04    3.71017e+04   -2.77803e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98343e+06   -3.82851e+04    4.46231e+05   -4.03207e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11185e+05   -3.22088e+06   -2.39387e+06    3.04171e+02   -1.49774e+03
+   Constr. rmsd
+    1.72850e-05
+
+           Step           Time
+          95000      522.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.19009e+05    1.46145e+05    2.03469e+04    3.71159e+04   -2.77993e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97754e+06   -3.83534e+04    4.46862e+05   -4.02441e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07700e+05   -3.21671e+06   -2.39012e+06    3.02865e+02   -1.50244e+03
+   Constr. rmsd
+    1.93531e-05
+
+           Step           Time
+          96000      528.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.18218e+05    1.45301e+05    2.02783e+04    3.70779e+04   -2.77986e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97942e+06   -3.82432e+04    4.47444e+05   -4.02733e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.06270e+05   -3.22106e+06   -2.38933e+06    3.02328e+02   -1.50613e+03
+   Constr. rmsd
+    1.71568e-05
+
+           Step           Time
+          97000      533.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.18306e+05    1.45933e+05    2.04121e+04    3.69339e+04   -2.77526e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97967e+06   -3.83438e+04    4.45619e+05   -4.02834e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09332e+05   -3.21901e+06   -2.38955e+06    3.03477e+02   -1.48318e+03
+   Constr. rmsd
+    1.90893e-05
+
+           Step           Time
+          98000      539.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.18556e+05    1.47142e+05    2.04367e+04    3.69798e+04   -2.77734e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97933e+06   -3.83600e+04    4.44947e+05   -4.02737e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08113e+05   -3.21925e+06   -2.38706e+06    3.03019e+02   -1.49138e+03
+   Constr. rmsd
+    1.91844e-05
+
+           Step           Time
+          99000      544.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.19475e+05    1.44919e+05    2.04177e+04    3.67319e+04   -2.77814e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98069e+06   -3.81537e+04    4.44024e+05   -4.03109e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09742e+05   -3.22135e+06   -2.38848e+06    3.03630e+02   -1.46658e+03
+   Constr. rmsd
+    1.92157e-05
+
+           Step           Time
+         100000      550.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.22118e+05    1.46172e+05    2.06931e+04    3.72019e+04   -2.77181e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97831e+06   -3.81858e+04    4.40668e+05   -4.02682e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.12146e+05   -3.21468e+06   -2.38581e+06    3.04532e+02   -1.48604e+03
+   Constr. rmsd
+    1.94275e-05
+
+           Step           Time
+         101000      555.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.22457e+05    1.46758e+05    2.05019e+04    3.71230e+04   -2.77098e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97975e+06   -3.82911e+04    4.39482e+05   -4.02882e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.12183e+05   -3.21664e+06   -2.38542e+06    3.04546e+02   -1.48938e+03
+   Constr. rmsd
+    1.67895e-05
+
+           Step           Time
+         102000      561.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.19039e+05    1.45684e+05    2.05146e+04    3.73547e+04   -2.76856e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98408e+06   -3.82469e+04    4.41517e+05   -4.03507e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07629e+05   -3.22744e+06   -2.38616e+06    3.02838e+02   -1.47178e+03
+   Constr. rmsd
+    1.75170e-05
+
+           Step           Time
+         103000      566.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.22683e+05    1.44956e+05    2.03520e+04    3.74349e+04   -2.77581e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98272e+06   -3.83206e+04    4.39527e+05   -4.03367e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07235e+05   -3.22643e+06   -2.38494e+06    3.02690e+02   -1.47293e+03
+   Constr. rmsd
+    1.61512e-05
+
+           Step           Time
+         104000      572.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.19355e+05    1.45495e+05    2.02321e+04    3.71467e+04   -2.77481e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98254e+06   -3.82759e+04    4.41608e+05   -4.03445e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10561e+05   -3.22389e+06   -2.38381e+06    3.03937e+02   -1.47420e+03
+   Constr. rmsd
+    1.75477e-05
+
+           Step           Time
+         105000      577.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.19764e+05    1.45599e+05    2.04615e+04    3.72692e+04   -2.77576e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98207e+06   -3.83821e+04    4.43408e+05   -4.03153e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07336e+05   -3.22419e+06   -2.37773e+06    3.02728e+02   -1.48949e+03
+   Constr. rmsd
+    1.58905e-05
+
+           Step           Time
+         106000      583.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.20485e+05    1.45152e+05    2.06120e+04    3.70678e+04   -2.77016e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98048e+06   -3.82649e+04    4.41932e+05   -4.03051e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08160e+05   -3.22235e+06   -2.37536e+06    3.03037e+02   -1.48198e+03
+   Constr. rmsd
+    1.83120e-05
+
+           Step           Time
+         107000      588.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.21851e+05    1.45419e+05    2.03833e+04    3.79985e+04   -2.77159e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98083e+06   -3.82673e+04    4.40628e+05   -4.02998e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.12745e+05   -3.21723e+06   -2.37028e+06    3.04756e+02   -1.48421e+03
+   Constr. rmsd
+    1.79529e-05
+
+           Step           Time
+         108000      594.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.22446e+05    1.44577e+05    2.03823e+04    3.73368e+04   -2.77441e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97980e+06   -3.82717e+04    4.40646e+05   -4.03013e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10346e+05   -3.21978e+06   -2.37035e+06    3.03857e+02   -1.46925e+03
+   Constr. rmsd
+    1.64825e-05
+
+           Step           Time
+         109000      599.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.22197e+05    1.45154e+05    2.04705e+04    3.70770e+04   -2.77045e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98010e+06   -3.82904e+04    4.39973e+05   -4.03056e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.12431e+05   -3.21813e+06   -2.36764e+06    3.04639e+02   -1.47959e+03
+   Constr. rmsd
+    1.60042e-05
+
+           Step           Time
+         110000      605.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.21776e+05    1.45083e+05    2.02801e+04    3.71068e+04   -2.77630e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98175e+06   -3.83373e+04    4.40030e+05   -4.03344e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07149e+05   -3.22629e+06   -2.36793e+06    3.02658e+02   -1.47443e+03
+   Constr. rmsd
+    1.88508e-05
+
+           Step           Time
+         111000      610.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.22839e+05    1.45243e+05    2.03177e+04    3.70240e+04   -2.76880e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98090e+06   -3.82519e+04    4.39963e+05   -4.03064e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09382e+05   -3.22126e+06   -2.36279e+06    3.03495e+02   -1.50247e+03
+   Constr. rmsd
+    1.97801e-05
+
+           Step           Time
+         112000      616.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.21210e+05    1.46173e+05    2.05663e+04    3.71851e+04   -2.77337e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97840e+06   -3.80617e+04    4.40523e+05   -4.02815e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.10581e+05   -3.21756e+06   -2.36075e+06    3.03945e+02   -1.49212e+03
+   Constr. rmsd
+    1.82517e-05
+
+           Step           Time
+         113000      621.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.20547e+05    1.45991e+05    2.01721e+04    3.72351e+04   -2.77028e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97948e+06   -3.82570e+04    4.39826e+05   -4.03099e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11493e+05   -3.21950e+06   -2.36168e+06    3.04287e+02   -1.46303e+03
+   Constr. rmsd
+    2.19477e-05
+
+           Step           Time
+         114000      627.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.23975e+05    1.46063e+05    2.03221e+04    3.74450e+04   -2.76948e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98236e+06   -3.83520e+04    4.37754e+05   -4.03210e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08225e+05   -3.22387e+06   -2.36055e+06    3.03062e+02   -1.49953e+03
+   Constr. rmsd
+    1.70783e-05
+
+           Step           Time
+         115000      632.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.24737e+05    1.45291e+05    2.02906e+04    3.68086e+04   -2.77529e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98348e+06   -3.82614e+04    4.36738e+05   -4.03540e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.09631e+05   -3.22577e+06   -2.35897e+06    3.03589e+02   -1.49808e+03
+   Constr. rmsd
+    1.67570e-05
+
+           Step           Time
+         116000      638.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.22472e+05    1.45658e+05    2.04447e+04    3.67369e+04   -2.77322e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97995e+06   -3.81951e+04    4.39789e+05   -4.03037e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07510e+05   -3.22286e+06   -2.35648e+06    3.02793e+02   -1.50565e+03
+   Constr. rmsd
+    1.59864e-05
+
+           Step           Time
+         117000      643.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.25580e+05    1.45484e+05    2.05137e+04    3.72330e+04   -2.76983e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97705e+06   -3.83391e+04    4.37505e+05   -4.02606e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07638e+05   -3.21842e+06   -2.35395e+06    3.02841e+02   -1.50789e+03
+   Constr. rmsd
+    1.94026e-05
+
+           Step           Time
+         118000      649.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.23043e+05    1.45269e+05    2.07145e+04    3.73417e+04   -2.77178e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98070e+06   -3.83490e+04    4.37599e+05   -4.03226e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07944e+05   -3.22431e+06   -2.35502e+06    3.02956e+02   -1.50099e+03
+   Constr. rmsd
+    1.79100e-05
+
+           Step           Time
+         119000      654.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.22364e+05    1.45274e+05    2.06194e+04    3.72693e+04   -2.77477e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98132e+06   -3.83029e+04    4.37870e+05   -4.03370e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.05674e+05   -3.22803e+06   -2.35421e+06    3.02105e+02   -1.50184e+03
+   Constr. rmsd
+    1.76084e-05
+
+           Step           Time
+         120000      660.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.24455e+05    1.44929e+05    2.04188e+04    3.71694e+04   -2.77166e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98118e+06   -3.83435e+04    4.35888e+05   -4.03383e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08436e+05   -3.22539e+06   -2.35423e+06    3.03141e+02   -1.49539e+03
+   Constr. rmsd
+    1.74094e-05
+
+           Step           Time
+         121000      665.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.23668e+05    1.44892e+05    2.03604e+04    3.70896e+04   -2.77243e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98639e+06   -3.83231e+04    4.34281e+05   -4.04166e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.08964e+05   -3.23270e+06   -2.35481e+06    3.03339e+02   -1.49402e+03
+   Constr. rmsd
+    1.94398e-05
+
+           Step           Time
+         122000      671.00000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.25125e+05    1.45584e+05    2.06492e+04    3.69418e+04   -2.77147e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98004e+06   -3.82786e+04    4.34465e+05   -4.03270e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.06112e+05   -3.22658e+06   -2.35213e+06    3.02269e+02   -1.49668e+03
+   Constr. rmsd
+    1.63471e-05
+
+           Step           Time
+         123000      676.50000
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.22508e+05    1.46187e+05    2.01595e+04    3.71658e+04   -2.76497e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98727e+06   -3.83357e+04    4.32892e+05   -4.04319e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.07829e+05   -3.23536e+06   -2.35311e+06    3.02913e+02   -1.48001e+03
+   Constr. rmsd
+    1.75285e-05
+
+
+
+Received the INT signal, stopping within 100 steps
+
+           Step           Time
+         123960      681.78000
+
+Writing checkpoint, step 123960 at Mon May 18 14:32:12 2026
+
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.22824e+05    1.45847e+05    2.01656e+04    3.77686e+04   -2.77127e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.98293e+06   -3.84280e+04    4.34001e+05   -4.03788e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.06520e+05   -3.23136e+06   -2.34816e+06    3.02422e+02   -1.47838e+03
+   Constr. rmsd
+    1.63425e-05
+
+
+Energy conservation over simulation part #1 of length 681.78 ps, time 0 to 681.78 ps
+  Conserved energy drift: 1.78e-03 kJ/mol/ps per atom
+
+
+	<======  ###############  ==>
+	<====  A V E R A G E S  ====>
+	<==  ###############  ======>
+
+	Statistics over 123961 steps using 1240 frames
+
+   Energies (kJ/mol)
+           Bond          Angle       G96Angle    Proper Dih.          LJ-14
+    6.02180e+05    1.46801e+05    2.06526e+04    3.59531e+04   -2.78523e+05
+     Coulomb-14        LJ (SR)   Coulomb (SR)   COM Pull En.      Potential
+    0.00000e+00   -4.97304e+06   -3.80708e+04    4.86541e+05   -3.99750e+06
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pressure (bar)
+    8.11037e+05   -3.18647e+06   -2.47075e+06    3.04116e+02   -1.49041e+03
+   Constr. rmsd
+    0.00000e+00
+
+          Box-X          Box-Y          Box-Z
+    1.46887e+01    1.46887e+01    1.07717e+02
+
+   Total Virial (kJ/mol)
+    2.38495e+05    3.95968e-01    1.52241e+02
+    3.97648e-01    2.38387e+05   -7.45051e+02
+    1.52137e+02   -7.44988e+02    3.46306e+06
+
+   Pressure (bar)
+    4.32136e+01   -1.38765e-02   -2.20650e-01
+   -1.38790e-02    4.35180e+01    1.02865e+00
+   -2.20502e-01    1.02856e+00   -4.55795e+03
+
+      T-Protein  T-non-Protein
+    3.05310e+02    3.03808e+02
+
+
+	M E G A - F L O P S   A C C O U N T I N G
+
+ NB=Group-cutoff nonbonded kernels    NxN=N-by-N cluster Verlet kernels
+ RF=Reaction-Field  VdW=Van der Waals  QSTab=quadratic-spline table
+ W3=SPC/TIP3p  W4=TIP4p (single or pairs)
+ V&F=Potential and force  V=Potential only  F=Force only
+
+ Computing:                               M-Number         M-Flops  % Flops
+-----------------------------------------------------------------------------
+ Pair Search distance check          228957.245664     2060615.211     0.5
+ NxN RF Elec. + LJ [F]              9713046.230272   369095756.750    97.4
+ NxN RF Elec. + LJ [V&F]              98224.479616     5304121.899     1.4
+ 1,4 nonbonded interactions            4657.462692      419171.642     0.1
+ Shift-X                               1505.080006        9030.480     0.0
+ Bonds                                 4832.247702      285102.614     0.1
+ Angles                                5783.524416      971632.102     0.3
+ Propers                               3191.871789      730938.640     0.2
+ Virial                                 301.363199        5424.538     0.0
+ Stop-CM                                301.307354        3013.074     0.0
+ Calc-Ekin                             1204.501034       32521.528     0.0
+ Lincs                                 1056.660612       63399.637     0.0
+ Lincs-Mat                             5323.962924       21295.852     0.0
+ Constraint-V                          2113.304176       19019.738     0.0
+ Constraint-Vir                          10.578284         253.879     0.0
+ Virtual Site N                        3270.025836       49050.388     0.0
+-----------------------------------------------------------------------------
+ Total                                               379070347.970   100.0
+-----------------------------------------------------------------------------
+
+
+      R E A L   C Y C L E   A N D   T I M E   A C C O U N T I N G
+
+On 1 MPI rank, each using 20 OpenMP threads
+
+ Activity:              Num   Num      Call    Wall time         Giga-Cycles
+                        Ranks Threads  Count      (s)         total sum    %
+--------------------------------------------------------------------------------
+ Vsite constr.             1   20     123961      23.884       1265.860   4.8
+ Neighbor search           1   20       6199      87.431       4633.839  17.7
+ Launch PP GPU ops.        1   20     241723       7.463        395.548   1.5
+ Force                     1   20     123961     108.204       5734.819  21.8
+ Wait GPU NB local         1   20     123961       0.062          3.292   0.0
+ Wait GPU state copy       1   20     122720      28.638       1517.824   5.8
+ NB X/F buffer ops.        1   20       1241       0.496         26.292   0.1
+ Vsite spread              1   20     125202      35.703       1892.247   7.2
+ COM pull force            1   20     123961       1.646         87.261   0.3
+ Write traj.               1   20        125       1.322         70.061   0.3
+ Update                    1   20     123961      52.398       2777.122  10.6
+ Constraints               1   20     123963     141.547       7501.993  28.6
+ Kinetic energy            1   20       4960       1.624         86.048   0.3
+ Rest                                              4.874        258.331   1.0
+--------------------------------------------------------------------------------
+ Total                                           495.292      26250.537 100.0
+--------------------------------------------------------------------------------
+
+NOTE: 18 % of the run time was spent in pair search,
+      you might want to increase nstlist (this has no effect on accuracy)
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     9905.807      495.292     2000.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:      118.932        0.202        3.996           60.766 
+Finished mdrun on rank 0 Mon May 18 14:32:12 2026
+

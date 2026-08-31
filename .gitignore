@@ -1,0 +1,10 @@
+# GROMACS / editor backups
+\#*
+*~
+*.swp
+
+# Over GitHub's 100 MB file limit; this account has no Git LFS quota.
+# Keep these TPR files on disk locally; they are the all-atom production inputs.
+cg_aa_no_pull/aa.tpr
+cg_aa_no_pull/aa_noW.tpr
+cg_constant_pull/md.tpr

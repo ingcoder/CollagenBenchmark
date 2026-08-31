@@ -1,0 +1,50 @@
+; STANDARD MD INPUT OPTIONS FOR MARTINI 3
+;
+;define                  = -DPOSRES
+;
+integrator               = md
+dt                       = 0.0055
+nsteps                   = 20000000
+nstcomm                  = 100
+;
+nstxout                  = 0
+nstvout                  = 0
+nstfout                  = 0
+nstlog                   = 1000
+nstenergy                = 1000
+nstxout-compressed       = 1000
+compressed-x-precision   = 1000
+compressed-x-grps        = System
+;
+cutoff-scheme            = Verlet
+nstlist                  = 20
+pbc                      = xyz
+verlet-buffer-tolerance  = -1
+rlist                    = 1.35
+;
+coulombtype              = reaction-field
+rcoulomb                 = 1.1
+epsilon_r                = 15
+epsilon_rf               = 0
+vdw_type                 = cutoff
+vdw-modifier             = Potential-shift-verlet
+rvdw                     = 1.1
+;
+tcoupl                   = v-rescale
+tc-grps                  = Protein  non-Protein
+tau_t                    = 2.0  2.0
+ref_t                    = 303  303
+;
+Pcoupl                   = parrinello-rahman
+Pcoupltype               = isotropic
+tau_p                    = 12.0
+compressibility          = 3.0e-4  3.0e-4
+ref_p                    = 1.0  1.0
+refcoord_scaling         = com
+;
+gen_vel                  = no
+gen_temp                 = 300
+gen_seed                 = -1
+;
+constraints              = none
+constraint_algorithm     = Lincs
